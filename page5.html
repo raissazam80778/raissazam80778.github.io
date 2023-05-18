@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful Emotions</title>
+    <style>
+        /* Random color generator */
+        function randomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        /* Rainbow text animation */
+        @keyframes rainbowAnimation {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+
+        /* Define emotions */
+        .emotion {
+            font-size: 48px;
+            font-weight: bold;
+            animation: rainbowAnimation 5s linear infinite;
+        }
+
+        .happy {
+            color: yellow;
+        }
+
+        .excited {
+            color: orange;
+        }
+
+        .playful {
+            color: green;
+        }
+
+        .joyful {
+            color: blue;
+        }
+
+        .energetic {
+            color: red;
+        }
+
+        .creative {
+            color: purple;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="emotion happy">Happy!</h1>
+        <h1 class="emotion excited">Excited!</h1>
+        <h1 class="emotion playful">Playful!</h1>
+        <h1 class="emotion joyful">Joyful!</h1>
+        <h1 class="emotion energetic">Energetic!</h1>
+        <h1 class="emotion creative">Creative!</h1>
+    </div>
+
+    <script>
+        // Randomly assign colors to emotions
+        var emotions = document.getElementsByClassName('emotion');
+        for (var i = 0; i < emotions.length; i++) {
+            emotions[i].style.color = randomColor();
+        }
+    </script>
+</body>
+</html>
